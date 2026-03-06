@@ -65,3 +65,24 @@ python app/main.py
 ## Notes
 
 This repository only contains the initial project skeleton. Business logic and full system features are intentionally not implemented yet.
+
+## Agent Architecture (Backend)
+
+A Hebrew-first, placeholder agent pipeline is scaffolded under `backend/app/agents` and prompt templates under `backend/app/ai/prompts/he`.
+
+Included agents:
+
+1. AudienceArchitect
+2. ContentStrategist
+3. ScenarioRefiner
+4. HookGenerator
+5. AnchorWriter
+6. LeadMagnetBuilder
+7. ContentAtomizer
+8. ReelsAgent
+9. StoriesAgent
+10. PostsAgent
+11. ContentScheduler
+
+All agents currently expose structured input/output interfaces and load placeholder Hebrew prompt templates for future LLM implementation.
+
