@@ -85,3 +85,4 @@ Included agents:
 11. ContentScheduler
 
 All agents currently expose structured input/output interfaces and load placeholder Hebrew prompt templates for future LLM implementation.
+
