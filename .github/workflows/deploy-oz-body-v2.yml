@@ -1,4 +1,4 @@
-name: Deploy OZ Body PWA
+name: Deploy MYBA Flow PWA
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout complete OZ Body V15
+      - name: Checkout MYBA Flow
         uses: actions/checkout@v4
         with:
           ref: oz-body-app
@@ -33,13 +33,13 @@ jobs:
         with:
           enablement: true
 
-      - name: Upload OZ Body artifact
+      - name: Upload MYBA Flow artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: oz-body
 
-      - name: Deploy OZ Body
+      - name: Deploy MYBA Flow
         id: deployment
         uses: actions/deploy-pages@v4
 
-# Deploy complete V15 nutrition and exercise guides - 2026-07-27
+# MYBA Flow MVP deployment - 2026-07-27
