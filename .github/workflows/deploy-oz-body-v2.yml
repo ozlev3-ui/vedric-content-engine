@@ -1,4 +1,4 @@
-name: Deploy OZ Body PWA v2
+name: Deploy OZ Body PWA
 
 on:
   push:
@@ -23,16 +23,21 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout OZ Body branch
+      - name: Checkout OZ Body app
         uses: actions/checkout@v4
         with:
           ref: oz-body-app
-      - name: Configure Pages
+
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload OZ Body
+        with:
+          enablement: true
+
+      - name: Upload OZ Body artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: oz-body
-      - name: Deploy
+
+      - name: Deploy OZ Body
         id: deployment
         uses: actions/deploy-pages@v4
