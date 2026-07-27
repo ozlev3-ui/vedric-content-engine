@@ -1,4 +1,4 @@
-name: Deploy MYBA Flow PWA
+name: Deploy MYBH Flow PWA
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout MYBA Flow
+      - name: Checkout MYBH Flow
         uses: actions/checkout@v4
         with:
           ref: oz-body-app
@@ -33,13 +33,13 @@ jobs:
         with:
           enablement: true
 
-      - name: Upload MYBA Flow artifact
+      - name: Upload MYBH Flow artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: oz-body
 
-      - name: Deploy MYBA Flow
+      - name: Deploy MYBH Flow
         id: deployment
         uses: actions/deploy-pages@v4
 
-# MYBA Flow MVP deployment - 2026-07-27
+# MYBH Flow onboarding and Health Connect setup - 2026-07-27
