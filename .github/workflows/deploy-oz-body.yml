@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/deploy-oz-body.yml'
       - 'oz-body/**'
+      - '.oz-body-deploy-trigger'
   workflow_dispatch:
 
 permissions:
