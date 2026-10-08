@@ -53,8 +53,29 @@ const EXINFO={
 'כפיפת פטיש בישיבה':['כמו כפיפת מרפקים, אבל כפות הידיים פונות זו לזו לאורך כל התנועה.','https://www.youtube.com/results?search_query=seated+hammer+curl+proper+form'],
 'פלאנק':['אמות על הרצפה, גוף בקו ישר, בטן וישבן אסופים. נושמים ושומרים שהאגן לא שוקע.','https://www.youtube.com/results?search_query=plank+proper+form']
 };
-function demoImage(name){let q={'לחיצת רגליים — מכונה':'leg press exercise','כפיפת ברך — מכונה':'seated leg curl exercise','פשיטת ברך — מכונה':'leg extension exercise','לחיצת כתפיים בישיבה — משקולות יד':'seated dumbbell shoulder press','הרחקת כתפיים לצדדים — משקולות יד':'dumbbell lateral raise','תאומים בעמידה — בסמית׳':'standing calf raise','Dead Bug — מזרן / משקל גוף':'dead bug exercise','לחיצת חזה שטוחה בסמית׳':'smith machine bench press','לחיצת חזה בשיפוע עם משקולות יד':'incline dumbbell press','פרפר בכבלים':'cable chest fly','כפיפת מרפקים עם משקולות יד בישיבה':'seated dumbbell curl','כפיפת פטיש בישיבה':'seated hammer curl','פלאנק':'plank exercise'}[name]||name;return 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=320&q=70'}
-function exDetails(name){let z=EXINFO[name];if(!z)return '';return '<img class="exthumb" loading="lazy" src="'+demoImage(name)+'" alt="הדגמה לתרגיל '+name+'"><details class="exdetails"><summary>📖 הסבר + הדגמה</summary><div class="exinfo">'+z[0]+'<br><a class="exlink" target="_blank" rel="noopener" href="'+z[1]+'">▶️ פתח סרטון הדגמה</a></div></details>'}
+function demoImage(name){return {
+'לחיצת רגליים — מכונה':'https://cdn.shopify.com/s/files/1/0176/4992/6244/files/Leg_press_set-up_Checklist.webp?v=1783088402',
+'כפיפת ברך — מכונה':'https://body.ba/pictures/zadnja_loza_pregib_sjedeci.jpg',
+'פשיטת ברך — מכונה':'https://i.ytimg.com/vi/_FEO1ODr72s/maxresdefault.jpg',
+'לחיצת כתפיים בישיבה — משקולות יד':'https://krasunia.ru/wp-content/uploads/3/1/a/31a5edad13421f69f430264722756eab.jpeg',
+'הרחקת כתפיים לצדדים — משקולות יד':'https://getfitcraft.com/images/exercises/lateral-raises-proper-form.webp',
+'תאומים בעמידה — בסמית׳':'https://s3assets.skimble.com/assets/1166293/image_iphone.jpg',
+'Dead Bug — מזרן / משקל גוף':'https://getfitcraft.com/images/exercises/deadbugs-proper-form.webp',
+'לחיצת חזה שטוחה בסמית׳':'https://assets.st-note.com/img/1729560293-tcNwhFq8ySBe2IPKCOpaMUHE.png?width=1200',
+'לחיצת חזה בשיפוע עם משקולות יד':'https://pub-8ce7ac24839649d585b239b4a6127843.r2.dev/images/incline-dumbbell-press-benefits__2840__en/incline-press-form-step-diagram.webp',
+'פרפר בכבלים':'https://cdn.shopify.com/s/files/1/0754/7279/8002/files/BlogChestFly-3.webp?v=1737098706',
+'כפיפת מרפקים עם משקולות יד בישיבה':'https://denverphysicaltherapyathome.com/wp-content/uploads/2022/04/SEATED-BICEP-CURLS-BILATERAL.jpg',
+'כפיפת פטיש בישיבה':'https://images2.corriereobjects.it/gallery/Salute/2012/04_Aprile/fitness/01/img_01/fit_6_672-458_resize.jpg?v=20120413144846',
+'פלאנק':'https://cdn.myshoptet.com/usr/www.forwardfitness.store/user/documents/upload/blog/plank/obrazok3plank.jpg',
+'פולי עליון לחזה':'https://i0.wp.com/scoutlife.org/wp-content/uploads/2021/08/latpulldowns.jpg?fit=1200%2C901&ssl=1',
+'חתירה בישיבה בכבל':'https://i.ytimg.com/vi/7o2oolbmzeI/maxresdefault.jpg',
+'חתירה ביד אחת עם משקולת יד':'https://wl-brightside.cf.tsp.li/resize/728x/jpg/5ee/99b/291796528abab813eac950e68f.jpg',
+'Face Pull':'https://images.squarespace-cdn.com/content/v1/67dd304be484914de597824d/859b8021-68cb-434b-a549-a92859cf4ab0/face-pulls-technical-guide.png',
+'פשיטת מרפקים בחבל':'https://matamatastrength.co.nz/exercises/male/tricep-pushdown.webp',
+'פשיטת מרפקים מעל הראש בחבל':'https://s3.amazonaws.com/prod.skimble/assets/1819067/image_iphone.jpg',
+'Side Plank':'https://cdn.myshoptet.com/usr/www.forwardfitness.store/user/documents/upload/blog/plank/obrazok3plank.jpg'
+}[name]||''}
+function exDetails(name){let z=EXINFO[name];if(!z)return '';let pic=demoImage(name);return (pic?'<img class="exthumb" loading="lazy" src="'+pic+'" alt="הדגמה לתרגיל '+name+'">':'')+'<details class="exdetails"><summary>📖 הסבר + הדגמה</summary><div class="exinfo">'+z[0]+'<br><a class="exlink" target="_blank" rel="noopener" href="'+z[1]+'">▶️ פתח סרטון הדגמה</a></div></details>'}
 function renderWorkout(){let d=new Date().getDay(),w=workoutForToday();if(!w){todayWorkoutTitle.textContent='שבת — מנוחה מלאה';workoutList.innerHTML='<div class="notice">היום לא מתאמנים. התאוששות היא חלק מהתוכנית.</div>';cardioPlan.textContent='מנוחה מלאה.';return}let names={A:'A — חזה + יד קדמית + ליבה',B:'B — רגליים + כתפיים + ליבה',C:'C — גב + יד אחורית + ליבה'};todayWorkoutTitle.textContent=names[w];let warm='<div class="notice"><b>🔥 חימום לפני האימון</b><br>5–10 דקות הליכה קלה–בינונית על הליכון. לאחר מכן, לפני התרגיל הראשון: סט חימום קל של 10–15 חזרות בלי להתקרב לכשל.</div>';let cool='<div class="notice"><b>🧘 סיום ושחרור</b><br>5–10 דקות הליכה קלה להורדת דופק, ואז 3–5 דקות מתיחות עדינות לרגליים ולכתפיים — ללא כאב וללא מתיחה אגרסיבית.</div>';workoutList.innerHTML=warm+ABC[w].map((x,i)=>'<div class="task"><input type="checkbox" id="ex'+w+i+'"><label><b>'+x[0]+'</b><br><small class="muted">'+x[1]+' · מנוחה '+x[2]+' · <b>משקל: '+x[3]+'</b></small>'+exDetails(x[0])+'</label></div>').join('')+cool;cardioPlan.textContent=d===5?'אין אירובי בערב — חדר הכושר סגור.':(d===1||d===4?'20–25 דקות אירובי קל.':'20–30 דקות אירובי קל–בינוני.')}
 foodTime.value=new Date().toTimeString().slice(0,5);render();renderWorkout();if(!state.onboarded){onboarding.classList.add('show');showStep()}
 </script></body></html>
